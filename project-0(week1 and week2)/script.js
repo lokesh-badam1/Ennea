@@ -11,7 +11,8 @@ function fetchRecipe(){
         let ul = document.querySelector('#Ingredients');
         console.log(ul.innerHTML)
         addIngredients(recipe,ul);
-    });
+    })
+    .catch(displayError);
 }
 
 function displayRecepie(recipe){
@@ -42,6 +43,11 @@ function addIngredients(recipe,ul){
             ul.appendChild(li);
         }    
     };
+}
+
+function displayError() {
+    const leftDiv = document.querySelector('#image');
+    leftDiv.innerText = "API: Error";
 }
 
 fetchRecipe();

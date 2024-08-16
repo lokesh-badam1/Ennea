@@ -18,7 +18,7 @@ function fetchRecipe(name){
         let ul = document.querySelector('#Ingredients');
         console.log(ul.innerHTML)
         addIngredients(recipe,ul);
-    }).catch(console.log(("No recipe found")));
+    }).catch(displayError);
 }
 function displayRecepie(recipe){
     const leftDiv = document.querySelector('#image');
@@ -50,4 +50,11 @@ function addIngredients(recipe,ul){
     };
 }
 
-console.log("qq");
+function displayError() {
+    const leftDiv = document.querySelector('#image');
+    leftDiv.innerText = "API Error: Dish not found";
+    const rightDiv = document.querySelector('#info');
+    rightDiv.innerText = "";
+
+}
+
