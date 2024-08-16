@@ -1,0 +1,21 @@
+.column{
+    float: left;
+    width: 50%;
+}
+
+/* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+body{
+    font-family: sans-serif;
+}
+
+header { 
+    text-align: end;
+}
+
+.search{
+    text-align: center;
+}
