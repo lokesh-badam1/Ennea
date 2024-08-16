@@ -18,7 +18,7 @@ function fetchRecipe(name){
         let ul = document.querySelector('#Ingredients');
         console.log(ul.innerHTML)
         addIngredients(recipe,ul);
-    });
+    }).catch(console.log(("No recipe found")));
 }
 function displayRecepie(recipe){
     const leftDiv = document.querySelector('#image');

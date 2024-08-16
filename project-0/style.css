@@ -12,3 +12,10 @@ body{
     font-family: sans-serif;
 }
 
+header { 
+    text-align: end;
+}
+
+.search{
+    text-align: center;
+}
