@@ -1,8 +1,43 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class map {
+public class map{
 
+    public static boolean addItem(String item,int calorie,HashMap<String,Integer> nutrition){
+        if(nutrition.containsKey(item)){
+            System.out.println("Item already exists");
+            return false;
+        }
+        nutrition.put(item,calorie);
+        return true;
+    }
+
+    public static boolean removeItem(String item,HashMap<String,Integer> nutrition){
+        if(nutrition.containsKey(item)){
+            nutrition.remove(item);
+            System.out.println("Item deleted");
+            return true;
+        }
+        else{
+            System.out.println("\nItem does not exists \nEnter valid item");
+            return false;
+        }
+    }
+
+    public static boolean checkItem(String item,HashMap<String,Integer> nutrition){
+        int calorie;
+        if(nutrition.containsKey(item)){
+            calorie = nutrition.get(item);
+            System.out.println(item+" contains "+calorie+" calories");
+            return true;
+        }
+        else{
+            System.out.println("\nItem not found");
+            return false;
+        }
+    }
+
+    
     public static void main(String[] args) {
         int calorie;
         String item;
@@ -27,34 +62,18 @@ public class map {
                     item = inp.next();
                     System.out.print("Enter the calorie count of "+item+":");
                     calorie = inp.nextInt();
-                    if(nutrition.containsKey(item)){
-                        System.out.println("Item already exists");
-                        break;
-                    }
-                    nutrition.put(item,calorie);
+                    addItem(item, calorie, nutrition);
                     System.out.println("Item added");
                     break;
                 case 2:
                     System.out.print("Enter the item name:");
                     item = inp.next();
-                    if(nutrition.containsKey(item)){
-                        nutrition.remove(item);
-                        System.out.println("Item deleted");
-                    }
-                    else{
-                        System.out.println("\nItem does not exists \nEnter valid item");
-                    }
+                    removeItem(item, nutrition);
                     break;
                 case 3:
                     System.out.print("Enter the item name:");
                     item = inp.next();
-                    if(nutrition.containsKey(item)){
-                        calorie = nutrition.get(item);
-                        System.out.println(item+" contains "+calorie+" calories");
-                    }
-                    else{
-                        System.out.println("\nItem not found");
-                    }
+                    checkItem(item, nutrition);
                     break;
                 default:
                 System.out.println("Enter a valid choice");
