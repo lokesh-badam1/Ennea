@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class map{
+public class Map{
 
     public static boolean addItem(String item,int calorie,HashMap<String,Integer> nutrition){
         if(nutrition.containsKey(item)){
