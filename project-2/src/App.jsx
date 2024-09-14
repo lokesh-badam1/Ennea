@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Display from "./components/display"
+import Controls from "./components/controls.jsx"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,8 +9,15 @@ function App() {
   return (
     <>
       <h1>Counter</h1>
+      <Display value={count}/>
+      <Controls setCount={setCount} count = {count}></Controls>
     </>
   )
 }
 
+
+
 export default App
+
+
+

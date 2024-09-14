@@ -1,16 +1,16 @@
-import {count,setCount} from "../App"
+export default function Controls(props) {
+    function increment(){
+        props.setCount(props.count + 1);
+    }
 
-function increment(){
-    setCount(count+1);
-  }
+    function decrement(){
+        props.setCount(props.count - 1);
+    }
 
-
-export default function Tasks(props){
     return(
-        <>
-    <button onClick={increment}>Increment</button>
-    <button onClick={decrement}>Decrement</button>
-    </>
+      <>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      </>
     );
-}
-
+  }
