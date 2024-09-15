@@ -1,4 +1,9 @@
+
+
 export default function Controls(props) {
+
+  
+
     function increment(){
         props.setCount(props.count + 1);
     }
